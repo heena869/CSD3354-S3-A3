@@ -14,9 +14,12 @@ namespace assignment_3
         {
             var tp = new TextProcessing();
             tp.Run();
+            
+
         }
     }
     class TextProcessing
+        
     {
         Queue<string> names = new Queue<string>();
         public void Run()
@@ -31,13 +34,49 @@ namespace assignment_3
                 while ((ln = file.ReadLine()) != null)
                 {
                     names.Enqueue(ln);
-                    Console.WriteLine(ln);
+                    Console.WriteLine(ln
+);
                     counter++;
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
+                PlayingWithStacks.Run(names);
             }
         }
     }
+     class PlayingWithStacks
+    {
+        public  static void Run( Queue<string> tangerine)
+        {
+            Stack<string> names = new Stack<string>();
+
+            foreach (var item in tangerine)
+            {
+                names.Push(tangerine.Dequeue());
+            }
+
+        }
+
+    }
+     class Workbench
+    {
+
+    }
+
+    class Red
+    {
+        public  static string FavoriteFood = "carroits";
+    }
+
+    class Blue
+    {
+        public void SayFavoriteFood(string FavFood)
+        {
+            Console.WriteLine(Red.FavoriteFood);
+        }
+    }
+
+
+
 
 }
